@@ -24,7 +24,7 @@ const listaLibros = [
         "categoria": "Terror"
     }
 ]
-function agregarLibro (){
+function agregarLibro() {
     let nLibTitulo = (document.getElementById('titulo').value);
     let nLibAutor = (document.getElementById('autor').value);
     let nLibAño = parseInt(document.getElementById('año').value);
@@ -39,7 +39,7 @@ function agregarLibro (){
     listaLibros.push(nuevoLibro);
     console.log(listaLibros)
 }
-function buscarLibro(){
+function buscarLibro() {
     let searchLib = (document.getElementById('buscarcategoria').value);
 
     const filtroLibros = listaLibros.filter((libro) => libro.categoria.toLowerCase() == searchLib)
@@ -50,25 +50,19 @@ function buscarLibro(){
         librosOrdenados += `Título: ${libro.titulo}\nAutor: ${libro.autor}\nAño: ${libro.año}\nCategoria: ${libro.categoria}\n\n`;
     });
 
-    document.getElementById('mostrarcategoria').textContent=librosOrdenados;
+    document.getElementById('mostrarcategoria').textContent = librosOrdenados;
     console.log(filtroLibros)
 }
 
-//convertir la colecion a cadena json
-function convertirJsonCadena(){
-    const nuelibros=JSON.stringify(listaLibros)
+//convertir la coleccion a cadena json
+function convertirJsonCadena() {
+    const nuelibros = JSON.stringify(listaLibros)
     console.log(nuelibros)
 }
 
-
-/*const nuevoslibros=JSON.parse(nuelibros)
-
-const nuevoslibro=JSON.stringify(nuevoslibros)*/
-
-
-
-
-/*fs.writeFile('lista_libros.json', nuevoslibros, (error)=>{
+const { error } = require('console');
+const fs = require('fs')
+fs.writeFile('lista_libros.json', listaLibros, (error) => {
     if (error) throw error;
-    console.log("informacion recibida")
-})*/
+    console.log("informacion recibida ;)")
+})
