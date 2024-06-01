@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="biblioteca.css">
+    <script src="biblioteca.js"></script>
+    <title>Laboratorio - Biblioteca</title>
+</head>
+<body>
+    <header>
+        <h1>Biblioteca virtual</h1>
+    </header>
+    <main>
+        <section id="primeraseccion">
+            <h2>Agregar libros</h2>
+            <span>titulo:</span>
+            <input type="text" id="titulo">
+            <br>
+            <span>autor:</span>
+            <input type="text" id="autor">
+            <br>
+            <span>año:</span>
+            <input type="number" id="año">
+            <br>
+            <span>categoria:</span>
+            <input type="text" id="categoria">
+            <br>
+            <button onclick="agregarLibro()">Agregar libro</button>
+        </section>
+        <section id="segundaseccion">
+            <h2>Buscar por categoria:</h2>
+            <input type="text" id="buscarcategoria">
+            <button onclick="buscarLibro()">Buscar</button>
+            <p id="mostrarcategoria"></p>
+        </section>
+    </main>
+</body>
+</html>
