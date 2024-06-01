@@ -24,6 +24,7 @@ const listaLibros = [
         "categoria": "Terror"
     }
 ]
+
 function agregarLibro() {
     let nLibTitulo = (document.getElementById('titulo').value);
     let nLibAutor = (document.getElementById('autor').value);
@@ -54,15 +55,14 @@ function buscarLibro() {
     console.log(filtroLibros)
 }
 
-//convertir la coleccion a cadena json
-function convertirJsonCadena() {
-    const nuelibros = JSON.stringify(listaLibros)
-    console.log(nuelibros)
-}
+
+//solo me guarda los libros predefenidos en la constante listaLibros, mas no los que agrego despues :(
+const nuelibros = JSON.stringify(listaLibros)
+console.log(nuelibros)
 
 const { error } = require('console');
 const fs = require('fs')
-fs.writeFile('lista_libros.json', listaLibros, (error) => {
+fs.writeFile('lista_libros.json', nuelibros, (error) => {
     if (error) throw error;
     console.log("informacion recibida ;)")
-})
+});
