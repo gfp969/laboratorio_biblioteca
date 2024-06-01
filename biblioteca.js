@@ -66,3 +66,16 @@ fs.writeFile('lista_libros.json', nuelibros, (error) => {
     if (error) throw error;
     console.log("informacion recibida ;)")
 });
+
+//leer los objetos de la lista en consola node.js
+fs.readFile('lista_libros.json', 'utf8', (err, data) => {
+    if (err) {
+    console.log("Ha ocurrido un error al leer el archivo:", err);
+    } else {
+    // Convertir la cadena JSON a objetos JavaScript
+    const bibliotecaJSON = JSON.parse(data);
+    console.log("La colección de libros ha sido leída desde 'biblioteca.json':",
+    bibliotecaJSON);
+    }
+    });
+
