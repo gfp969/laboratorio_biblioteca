@@ -37,6 +37,7 @@ function agregarLibro (){
         "categoria": nLibCategoria
     }
     listaLibros.push(nuevoLibro);
+    console.log(listaLibros)
 }
 function buscarLibro(){
     let searchLib = (document.getElementById('buscarcategoria').value);
@@ -50,17 +51,22 @@ function buscarLibro(){
     });
 
     document.getElementById('mostrarcategoria').textContent=librosOrdenados;
+    console.log(filtroLibros)
 }
 
-//convertir la colecion a cadena json y de nuevo a objeto
-const nuelibros=JSON.stringify(listaLibros)
+//convertir la colecion a cadena json
+function convertirJsonCadena(){
+    const nuelibros=JSON.stringify(listaLibros)
+    console.log(nuelibros)
+}
+
 
 /*const nuevoslibros=JSON.parse(nuelibros)
 
 const nuevoslibro=JSON.stringify(nuevoslibros)*/
 
 
-console.log(nuelibros)
+
 
 /*fs.writeFile('lista_libros.json', nuevoslibros, (error)=>{
     if (error) throw error;
